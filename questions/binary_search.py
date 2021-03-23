@@ -83,6 +83,27 @@ def install_router(home_count: int, router_count: int, home_coordinates: List[in
     # 정렬
     home_coordinates.sort()
     # [1, 2, 4, 8, 9]
+    # [1, 2, 4, 5, 7, 9, 10, 11, 12] / 4개
 
-    # 각각 
+    # 거리 x만큼으로 모든 공유기를 나열할 수 있는지?
+    # - x가 주어졌을 때, 차례대로 x를 더해가면서 검증해야하나?
+    # 있다면 x값을 늘림
+    # 없다면 x값을 줄임
 
+    start_index = 0
+    end_index = len(home_coordinates) - 1
+    mid_index = (start_index + end_index) // 2
+    distance = 0
+    while start_index <= end_index:
+        start_value = home_coordinates[start_index]
+        mid_value = home_coordinates[mid_index]
+        # 중간값과의 거리 계산
+        distance = mid_value - start_value
+        # 거리 x만큼으로 모든 공유기를 나열할 수 있는지?
+        # 가장 처음 값부터 시작
+        prev_value = start_value
+        # 값에서 거리를 더한 값의 index 찾기
+        for i in range(len(router_count)) -1:
+            start_value + distance
+
+    # 아니면 이진탐색으로 1씩 더해가면서 해야하나?
